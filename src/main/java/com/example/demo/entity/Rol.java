@@ -1,23 +1,18 @@
+// Rol.java
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDate;
 
 @Entity
-@Table(name = "laboratorios")
+@Table(name = "roles")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Laboratorio {
+public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
-    private Integer capacidad;
-    private String estado;
-
-    @Column(name = "fecha_registro")
-    private LocalDate fechaRegistro;
 }

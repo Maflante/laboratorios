@@ -4,6 +4,14 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- Parent de Spring Boot -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.1.2</version>
+    <relativePath/> <!-- busca el parent en el repositorio central -->
+  </parent>
+
   <groupId>com.example</groupId>
   <artifactId>laboratorios</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -19,21 +27,24 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>3.1.2</version>
     </dependency>
 
     <!-- Spring Data JPA -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
-      <version>3.1.2</version>
+    </dependency>
+
+    <!-- Spring Security -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
 
     <!-- MySQL Driver -->
     <dependency>
       <groupId>com.mysql</groupId>
       <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
       <scope>runtime</scope>
     </dependency>
 
@@ -41,7 +52,6 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.28</version>
       <scope>provided</scope>
     </dependency>
 
@@ -49,7 +59,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <version>3.1.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -67,18 +76,10 @@
         </configuration>
       </plugin>
 
-      <!-- Spring Boot Plugin con repackage -->
+      <!-- Spring Boot Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>3.1.2</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
