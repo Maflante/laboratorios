@@ -1,0 +1,1 @@
+insert into roles (nombre) values ('TEST_ROLE');
